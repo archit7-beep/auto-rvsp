@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+cookie.json
+state.json
+debug_*.py
+mutations*.txt
+.vscode/

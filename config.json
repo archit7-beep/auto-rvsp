@@ -1,0 +1,10 @@
+{
+  "groups": [
+    "ai-circle-meetup-group",
+    "grafana-friends-pune"
+  ],
+  "check_interval_minutes": 60,
+  "dry_run": true,
+   "max_rsvps": 1,
+  "state_file": "state.json"
+}
