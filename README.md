@@ -33,7 +33,13 @@ A cross-platform Python tool that helps you stay on top of upcoming Meetup.com e
 1.  **Setup Configuration**:
     Follow the detailed instructions in [SETUP.md](SETUP.md) to obtain your session cookie and configure `config.json`.
 
-2.  **Run the Script**:
+2.  **Configure Credentials**:
+    ```bash
+    cp cookie.example.json cookie.json
+    ```
+    Then edit `cookie.json` and paste your session cookie (see [SETUP.md](SETUP.md)).
+
+3.  **Run the Bot**:
     ```bash
     python main.py
     ```

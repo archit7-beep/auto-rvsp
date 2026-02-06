@@ -32,7 +32,18 @@ def main():
     config = load_json(args.config)
     
     # Load Cookies
-    cookie_data = load_json(args.cookie)
+    cookie_data = {}
+    try:
+        cookie_data = load_json(args.cookie)
+    except SystemExit:
+        # If default fails, check if example exists for helpful error
+        if args.cookie == "cookie.json" and not os.path.exists("cookie.json"):
+            if os.path.exists("cookie.example.json"):
+                 print("\nError: 'cookie.json' not found.")
+                 print("Hint: detected 'cookie.example.json'. \n      Run: copy cookie.example.json cookie.json\n      Then edit cookie.json with your actual cookies.")
+                 sys.exit(1)
+        sys.exit(1)
+
     cookie_header = cookie_data.get("cookies")
     if not cookie_header:
         print("Error: 'cookies' key missing in cookie file")
